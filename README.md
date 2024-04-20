@@ -8,6 +8,9 @@ This is is a simple bank application. When you load the application you will be 
 4. Teller Sign in
 5. Exit
 
+This application has a little bit of a heiarchy that goes like this:
+Main -> Menu -> Bank -> Teller -> Customer -> Account
+
 In order to get started with this application the first thing that you should do is create an account. After you create an account you can acess that account by choosing the first option. There you will type in your PIN that you set when you created the account and you can start running the application! 
 
 EX: 
@@ -80,6 +83,79 @@ Please make a selection:
 Base off what you click will call the Methods of the Teller class. 
 
 # Bank Class
+The bank class is a very small class that only has a few methods/attributes but is crucial to the functunality of this program. The bank class only has one field. This is a static field called customerList that contains an ArrayList of Customer objects. It is static because it's going to need to be used in it's subclass (Teller).
+
+## Methods
+
+### addCustomer
+Takes in a customer object as a parameter. It will then call the ArrayList's add method and add that object to the customerList ArrayList. 
+
+### removeCustomer
+Takes in a customer obejct as a parameter.  It will then call the ArrayList's remove method and remove that object to the customerList ArrayList. 
+
+### getCustomer
+Takes in a PIN number as a parameter. It will then loop through the customerList and look at each customer's PIN number. If the PIN number's match it will return that customer. If no customer is found with the PIN number it will return null.
+
+### printAllCustomer
+This method will loop through ever customer in the customerList and will print the customer's toString method that is overridden to print out that customer's first/last name, and PIN number. 
+
+# Customer Class
+The customer class is the class that contains all the data about the customer. It's attributes are firstName, lastName, PIN, and a HashMap containing all the customer's accounts. The key is the account number and the value is an instance of the account class. 
+
+## Methods
+
+### addAccount
+Takes in an instance of the account class and grabs the account's account number using it's getAccountNumber method. It will then put the account to the customer's account HashMap. 
+
+### removeAccount
+Takes in an instance of the account class. Calls the HashMap remove method and grabs the account's account number using the account's getAccountNumber method. 
+
+### getAccountByNum
+Takes in an accountNumber as a parameter. Checks if the account HashMap contains the key. If it does it will get that account and return it. If not it will return null. 
+
+### toString (Overridden)
+Return's a string. It will return a printout of all the customer's attributes.
+
+Ex: Customer's Name: Nolan Meyer, PIN: 678
+
+# Account 
+This class contains all the information about an account. It has three attributes. A balance, accountNumber, and a static attribute callled numberOfAccounts that is set defualt to be 1000 but is incrimented every time an instance of an account is made and that is how the accountNumber is generated. 
+
+## Methods 
+
+### deposit
+Takes in a deposit as a parameter. It will add the deposit to the balance and then print out the amount deposited followed by the updated balance. 
+
+### withdraw
+Takes in an amount as a parameter. Checks if that amount is greater than the balance. If it is it will print "Insufficient Funds". If it is not it will subtract the amount from the balance and print the amount withdrawn followed by the updated balance. 
+
+### toString (Overridden)
+This returns a string with the accounts attributes. 
+
+EX: 
+Account Number: 1001
+Balance: $1000.00
+
+# Teller Class
+The Teller class is a subclass of the bank class. It can do a few things that Teller can do such as deposit, withdraw, and close a customer's accounts. It has a couple attributes. The attributes are a PIN number, and an instance of the Scanner class. 
+
+## Methods
+
+### deposit
+Asks the user for an account number. Then it will loop through every customer and check if their account HashMap contains that key. If it does it will store that account into a variable, and store the customer into a variable. If no account is found it will print that no account is found. If no account is found it will return. If an account is found it will ask for the PIN number and check if it is the correct PIN number. If the PIN number is correct you will be able to deposit and add to the account balance. If it is not you will not be able to deposit. 
+
+### withdrawal
+Withdrawal functions the exact same way as deposit does. Except instead of adding to the account balance it will subtract from account balance. 
+
+### removeCustomer
+The first thing that this method will do is ask your for PIN number. It will loop through every customer in the customerList (static variable from parent class bank) and check each of that customer's PIN. If it finds a customer with that PIN it will store it into a variable. Once the loop is done executing if a customer isn't found it will print "Customer not found!" and return. If it is found it will remove the customer from the customerList (static variable from parent class bank) and print that the customer has been removed. 
+
+
+
+
+
+
+
 
 
 
