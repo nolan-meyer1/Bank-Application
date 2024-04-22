@@ -8,7 +8,7 @@ public class Menu {
 
     //Displays the menu
     private void displayMenu(){
-        int userInput;
+        /*Prints the menu*/
 
         System.out.println("********* MENU *********");
         System.out.println();
@@ -21,8 +21,12 @@ public class Menu {
         System.out.print(">> ");
 
     }
+
     //This is what is called to run the menu using a while loop then going to whatever the userInput's desired
     public void runMenu(){
+        /*Runs the menu. Enters a while loop and based off the user's
+        * selection it will call the method to do what the user is
+        * intending. */
 
         boolean keepGoing = true;
 
@@ -60,6 +64,13 @@ public class Menu {
 
     //Access an account
     private void accessAccount(){
+        /*Asks the user for their PIN
+        * will search through the customer list
+        * attached to the instance of the bank class.
+        * if the pin is found it will ask for what account number
+        * and if you put a correct account number you will be able
+        * to update the account's values.  */
+
         int userPIN;
         Customer customer;
 
@@ -116,6 +127,8 @@ public class Menu {
 
     //Prints menu after the user tries to access the account
     private void printAccountMenu(Account account, Customer customer){
+        /*Prints the account menu. This menu is what is used to update
+         the accounts values.*/
 
         int userSelection = 0;
         boolean keepGoing = true;
@@ -126,7 +139,7 @@ public class Menu {
             System.out.println();
             System.out.println("Please make a selection:");
             System.out.println("1) Make a deposit");
-            System.out.println("2) Make a withdrawl");
+            System.out.println("2) Make a withdrawal");
             System.out.println("3) See account balance");
             System.out.println("4) Close account");
             System.out.println("5) Exit");
@@ -176,6 +189,10 @@ public class Menu {
 
     //Opens an account. Asks if the user is a new customer or not. If they are create a new customer. If not then deposit
     private void openAccount(){
+        /*This is what is used to open an account. Once an
+        * account is opened it is added to that customer's
+        * account list. Also calls the createCustomer method.*/
+
         int userInput;
         int pin;
         double deposit;
@@ -238,6 +255,10 @@ public class Menu {
 
     //Creates a new customer
     private Customer createNewCustomer(){
+        /*Creates a customer. Helper function of the
+        * createAccount. Allows you to create an instance of
+        * the customer account. */
+
         String firstName;
         String lastName;
         int pin;
@@ -266,6 +287,11 @@ public class Menu {
 
     //Close all the accounts of the customer
     private void closeAllAccounts(){
+        /*Asks the user for their PIN and
+        * searches for a customer with that PIN.
+        * If the pin is found the customer is
+        * removed from the bank's customer list.*/
+
         int userInput;
 
         System.out.print("Please enter your PIN: ");
@@ -288,6 +314,9 @@ public class Menu {
 
     //Creates the teller's menu and gives the teller options
     public void tellerMenu(){
+        /*Asks the user to enter the teller id.
+        * If it's correct you will have access to
+        * the teller menu and it's methods.*/
 
         int userSelection = 0;
         boolean keepGoing = true;
@@ -309,8 +338,9 @@ public class Menu {
             System.out.println();
             System.out.println("Please make a selection:");
             System.out.println("1) Make a deposit");
-            System.out.println("2) Make a withdrawl");
-            System.out.println("3) Exit");
+            System.out.println("2) Make a withdrawal");
+            System.out.println("3) Remove Customer");
+            System.out.println("4) Exit");
             System.out.print(">> ");
 
             try {
@@ -327,6 +357,9 @@ public class Menu {
                 teller.withdrawal();
 
             }else if (userSelection == 3){
+                teller.removeCustomerTeller();
+
+            }else if (userSelection == 4){
                 keepGoing = false;
                 System.out.println("Exiting Teller Menu!");
             }else{

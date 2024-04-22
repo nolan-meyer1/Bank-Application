@@ -12,16 +12,21 @@ public class Bank {
 
     //Adds a customer to the list
     public void addCustomer(Customer customer){
+        /*Adds customer from the customerList ArrayList*/
+
         customerList.add(customer);
     }
 
     //Removes a customer from the list
     public void removeCustomer(Customer customer){
+        /*Removes customer from the customerList ArrayList*/
+
         customerList.remove(customer);
     }
 
     //Gets a customer by pin
     public Customer getCustomer(int pin){
+        /*Searches for a customer by their pin number*/
 
         Customer customerReturned = null;
 
@@ -34,8 +39,10 @@ public class Bank {
         return customerReturned;
     }
 
-    //Prints all customer info needs review
+    //Prints all customer info
     public void printAllCustomer(){
+        /*Prints all the customer data from
+        * an overridden toString method*/
 
         for(Customer customer: customerList){
             System.out.println(customer.toString());

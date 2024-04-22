@@ -30,10 +30,8 @@ public class Teller extends Bank{
         System.out.print("Account Number: ");
         userInput = Integer.parseInt(scnr.nextLine());
 
-        ArrayList<Customer> customerArray = super.getCustomerList();
-
         //Searches for the account using the parent customer list
-        for(Customer customer: super.getCustomerList()){
+        for(Customer customer: getCustomerList()){
 
             if (customer.getAccounts().containsKey(userInput)){
                 accountFound = customer.getAccountByNum(userInput);
@@ -82,7 +80,7 @@ public class Teller extends Bank{
         ArrayList<Customer> customerArray = getCustomerList();
 
         //Searches for the account using the parent customer list
-        for(Customer customer: getCustomerList()){
+        for(Customer customer: customerList){
 
             if (customer.getAccounts().containsKey(userInput)){
                 accountFound = customer.getAccountByNum(userInput);
@@ -112,6 +110,33 @@ public class Teller extends Bank{
 
     }
 
+    //Removes a customer
+    public void removeCustomerTeller(){
+        /*This will ask for a customer's pin
+        * if the pin is correct it will remove the customer
+        * from the customer list*/
+        int userInput;
+        Customer customerFound = null;
+
+        System.out.print("Please enter a PIN: ");
+        userInput = Integer.parseInt(scnr.nextLine());
+
+        for (Customer customer: customerList){
+            if (customer.getPin() == userInput){
+                customerFound = customer;
+            }
+        }
+
+        if (customerFound == null){
+            System.out.println("Customer not found!");
+            return;
+
+        }else{
+            removeCustomer(customerFound);
+            System.out.println("Customer removed!");
+
+        }
+    }
 
 
 

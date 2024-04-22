@@ -46,7 +46,7 @@ public class Customer {
     //toString method that will print the customer's name and pin
     @Override
     public String toString() {
-        return String.format("Customer's Name: %s  %s, Pin: %d", firstName, lastName, pin);
+        return String.format("Customer's Name: %s  %s, PIN: %d", firstName, lastName, pin);
     }
 
     //Getters and setters
