@@ -150,6 +150,15 @@ Withdrawal functions the exact same way as deposit does. Except instead of addin
 ### removeCustomer
 The first thing that this method will do is ask your for PIN number. It will loop through every customer in the customerList (static variable from parent class bank) and check each of that customer's PIN. If it finds a customer with that PIN it will store it into a variable. Once the loop is done executing if a customer isn't found it will print "Customer not found!" and return. If it is found it will remove the customer from the customerList (static variable from parent class bank) and print that the customer has been removed. 
 
+# Unit Testing
+There is also a subdirectory that contains unit tests for the following class's:
+* Customer
+* Account
+* Bank
+* Teller
+
+There isn't a test for every method apart of these class's but all of the crucial methods have unit tests
+
 
 
 
