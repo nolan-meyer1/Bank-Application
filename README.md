@@ -17,7 +17,8 @@ EX:
 
 <img width="207" alt="Screenshot 2024-04-19 at 11 08 51 PM" src="https://github.com/nolan-meyer1/Bank-Application/assets/145584308/91b0b2d4-b372-4c0a-8685-385e233f7ae1">
 <img width="300" alt="Screenshot 2024-04-19 at 11 09 25 PM" src="https://github.com/nolan-meyer1/Bank-Application/assets/145584308/cd61d846-26b2-42ae-94e9-9f1e4e5fbb47">
-<img width="300" alt="Screenshot 2024-04-19 at 11 09 25 PM" src="https://github.com/nolan-meyer1/Bank-Application/assets/145584308/92e8f5ed-7945-4d33-93ed-50a003b14626">
+<img width="360" alt="Screenshot 2024-04-23 at 5 55 07 PM" src="https://github.com/nolan-meyer1/Bank-Application/assets/145584308/93ac2d22-89e3-4b8d-bc86-3e42dfce190c">
+
 
 # Menu Class
 The menu class is what controls most of this application. It has three fields that are all private. It has an instance of the Scanner class so we can get input, an instance of the Bank class that will store all the customers, and an instance of the Teller class that will be discussed later. It also has multiple methods.
