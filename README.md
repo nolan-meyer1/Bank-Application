@@ -73,7 +73,7 @@ Helper method of open account. Creates an instance of the customer class and wil
 Will asks for a PIN number. If the PIN number is found it will remove that customer from the bank customer list essentially closing all of their accounts. If the PIN is not found it will print that the PIN is not found and then exit that method. 
 
 ### tellerMenu
-Will start by asking for the Teller ID. If the ID is correct it will print the following menu: 
+Will start by asking for the Teller PIN. There is only one teller that has an ID of 445 which you will need to enter to sign in. If the ID is correct it will print the following menu: 
 
 Please make a selection:
 1) Make a deposit
