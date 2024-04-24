@@ -119,6 +119,9 @@ Return's a string. It will return a printout of all the customer's attributes.
 
 Ex: Customer's Name: Nolan Meyer, PIN: 678
 
+### loadCustomers
+This method loads from the customers.xml file. It will look for every element of the tag customer and then create an instance of the Customer class and pass it the sub elements like firstName, lastName, and PIN. Then it will look for every account element attatched to that customer and create an instance of the Account class and look at it's sub elements and pass it to the account's constructor such as account number, and balance. Lastly, it will set the account static variable to the element numberOfAccounts. 
+
 # Account 
 This class contains all the information about an account. It has three attributes. A balance, accountNumber, and a static attribute callled numberOfAccounts that is set defualt to be 1000 but is incrimented every time an instance of an account is made and that is how the accountNumber is generated. 
 
