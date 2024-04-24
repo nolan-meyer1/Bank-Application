@@ -323,7 +323,12 @@ public class Menu {
 
 
         System.out.print("Enter Teller ID: ");
-        userSelection = Integer.parseInt(scnr.nextLine());
+        try {
+            userSelection = Integer.parseInt(scnr.nextLine());
+        }catch (Exception excpt){
+            System.out.println("Invalid Response!");
+            return;
+        }
 
         if (userSelection == teller.getPin()){
             System.out.println("Welcome!");

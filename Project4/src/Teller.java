@@ -28,7 +28,13 @@ public class Teller extends Bank{
         int pin;
 
         System.out.print("Account Number: ");
-        userInput = Integer.parseInt(scnr.nextLine());
+
+        try {
+            userInput = Integer.parseInt(scnr.nextLine());
+        } catch (Exception excpt){
+            System.out.println("Invalid Response!");
+            return;
+        }
 
         //Searches for the account using the parent customer list
         for(Customer customer: getCustomerList()){
@@ -75,7 +81,12 @@ public class Teller extends Bank{
         int pin;
 
         System.out.print("Account Number: ");
-        userInput = Integer.parseInt(scnr.nextLine());
+        try {
+            userInput = Integer.parseInt(scnr.nextLine());
+        }catch (Exception excpt){
+            System.out.println("Invalid Response!");
+            return;
+        }
 
         ArrayList<Customer> customerArray = getCustomerList();
 
@@ -93,8 +104,14 @@ public class Teller extends Bank{
             System.out.println("No account was found!");
             return;
         }else{
+
             System.out.print("Please enter your PIN: ");
-            userInput = Integer.parseInt(scnr.nextLine());
+            try {
+                userInput = Integer.parseInt(scnr.nextLine());
+            }catch (Exception excpt){
+                System.out.println("Invalid response!");
+                return;
+            }
 
             if (userInput == customerFound.getPin()){
                 System.out.print("Withdrawal Amount: ");
@@ -119,7 +136,12 @@ public class Teller extends Bank{
         Customer customerFound = null;
 
         System.out.print("Please enter a PIN: ");
-        userInput = Integer.parseInt(scnr.nextLine());
+        try {
+            userInput = Integer.parseInt(scnr.nextLine());
+        }catch(Exception excpt){
+            System.out.println("Invalid Response!");
+            return;
+        }
 
         for (Customer customer: customerList){
             if (customer.getPin() == userInput){

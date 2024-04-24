@@ -1,0 +1,15 @@
+<cusomterList>
+
+    <customer>
+        <firstName>Nolan</firstName>>
+        <lastName>Nolan</lastName>>
+        <PIN>678</PIN>>
+        <account>
+            <balance>1000</balance>
+        </account>
+    </customer>
+
+
+
+
+</cusomterList>
