@@ -1,3 +1,7 @@
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.HashMap;
 public class Menu {
@@ -27,6 +31,17 @@ public class Menu {
         /*Runs the menu. Enters a while loop and based off the user's
         * selection it will call the method to do what the user is
         * intending. */
+
+        //Loads the customers in from an xml file
+        try {
+            bank.loadCustomers();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (SAXException e) {
+            throw new RuntimeException(e);
+        } catch (ParserConfigurationException e) {
+            throw new RuntimeException(e);
+        }
 
         boolean keepGoing = true;
 

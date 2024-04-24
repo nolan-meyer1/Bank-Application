@@ -8,8 +8,9 @@ public class Teller extends Bank{
 
     private Scanner scnr = new Scanner(System.in);
 
-    //Defualt constructor that calls the parent constructor
+    //Default constructor that calls the parent constructor
     public Teller(){
+        
 
     }
 

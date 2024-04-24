@@ -12,6 +12,17 @@ public class Account {
         balance = deposit;
     }
 
+    //Another constructor for creating accounts
+    public Account(double balance,int accountNumber){
+        this.balance = balance;
+        this.accountNumber = accountNumber;
+    }
+
+    //Defualt constructor
+    public Account(){
+
+    }
+
     //Method to deposit money into the account
     public void deposit(double deposit){
         balance = balance + deposit;
@@ -54,5 +65,13 @@ public class Account {
 
     public void setAccountNumber(int accountNumber) {
         this.accountNumber = accountNumber;
+    }
+
+    public static int getNumberOfAccounts() {
+        return numberOfAccounts;
+    }
+
+    public static void setNumberOfAccounts(int numberOfAccounts) {
+        Account.numberOfAccounts = numberOfAccounts;
     }
 }

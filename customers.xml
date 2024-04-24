@@ -5,11 +5,21 @@
         <lastName>Nolan</lastName>>
         <PIN>678</PIN>>
         <account>
+            <accountNum>1001</accountNum>>
             <balance>1000</balance>
         </account>
     </customer>
 
+    <customer>
+        <firstName>Riley</firstName>>
+        <lastName>Montgomery</lastName>>
+        <PIN>532</PIN>>
+        <account>
+            <accountNum>1002</accountNum>>
+            <balance>156</balance>
+        </account>
+    </customer>
 
-
+    <numberOfAccounts>1002</numberOfAccounts>>
 
 </cusomterList>
