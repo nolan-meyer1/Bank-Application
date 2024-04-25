@@ -1,4 +1,4 @@
-# Bank-Application
+<h1 align="center"> Bank-Application </h1>
 
 ## Overview
 
