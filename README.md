@@ -171,4 +171,4 @@ There is also a subdirectory that contains unit tests for the following class's:
 * Bank
 * Teller
 
-There isn't a test for every method apart of these class's but all of the crucial methods have unit tests. This was accomplished using the JUnit 5 framework. 
+There isn't a test for every method apart of these class's but all of the crucial methods have unit tests. This was accomplished using the JUnit 5 framework. There is also a MockTestTeller class that was generated in order to make it easier to test the teller's methods because a lot of those require user input. 
