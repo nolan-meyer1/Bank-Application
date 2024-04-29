@@ -25,6 +25,9 @@ public class Account {
 
     //Method to deposit money into the account
     public void deposit(double deposit){
+        /*Takes in a deposit amount and
+        * updates the balance of the account*/
+
         balance = balance + deposit;
         System.out.printf("Amount Deposited: $%.2f\n",deposit);
         System.out.printf("Updated Balance: $%.2f\n",balance);
@@ -32,6 +35,8 @@ public class Account {
 
     //Method to withdraw money from the account
     public void withdraw(double amount){
+        /*Takes in a withdrawal amount
+        * and updates the account balance.*/
 
         if (amount > balance){
             System.out.println("Insufficient Funds");

@@ -22,18 +22,25 @@ public class Customer {
 
     //Allows the user to add an account to the account list
     public void addAccount(Account account) {
+        /*Adds an account to the customer's HashMap*/
+
         accounts.put(account.getAccountNumber(),account);
         System.out.printf("Successfully added: %d to accounts!\n", account.getAccountNumber());
     }
 
     //Removes an account from the account list(closes account)
     public void removeAccount(Account account) {
+        /*Removes an account from the customers HashMap*/
+
         accounts.remove(account.getAccountNumber());
         System.out.println("Successfully removed!");
     }
 
     //Get account by account number. Returns null if no account is found
     public Account getAccountByNum(int accountNumber) {
+        /*Returns an account if the HashMap contains the
+        * account number that it was passed*/
+
         Account accountReturn = null;
 
         if (accounts.containsKey(accountNumber)){
