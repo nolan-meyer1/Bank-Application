@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class TellerTest {
 
 
+    /*Adds the account to the customer list and then tries to make a deposit. Uses
+     * mock object*/
     @Test
     void deposit() {
-        /*Adds the account to the customer list and then tries to make a deposit. Uses
-        * mock object*/
 
         Bank bank = new Bank();
         Customer customer = new Customer("Nolan","Meyer",678);
@@ -21,10 +21,10 @@ class TellerTest {
 
     }
 
+    /*Withdraws 100 from the account balance. After the first test runs
+     * the expected value should be 1900*/
     @Test
     void withdrawal() {
-        /*Withdraws 100 from the account balance. After the first test runs
-        * the expected value should be 1900*/
 
         Bank bank = new Bank();
         Customer customer = new Customer("Nolan","Meyer",678);
@@ -38,9 +38,9 @@ class TellerTest {
 
     }
 
+    /*Checks if the customer is removed*/
     @Test
     void removeCustomerTeller() {
-        /*Checks if the customer is removed*/
 
         Bank bank = new Bank();
         Customer customer = new Customer("Nolan","Meyer",678);

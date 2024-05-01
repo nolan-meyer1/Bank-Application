@@ -7,12 +7,15 @@ public class Customer {
     private int pin;
     private HashMap<Integer,Account> accounts = new HashMap<Integer,Account>();
 
-    //Defualt Constructor
+    /*Defualt Constructor*/
     public Customer(){
 
     }
 
-    //Constructor
+    /*Constructor that sets all the fields to values passed in.
+    * @param firstName first name of the customer
+    * @param lastName last name of the customer
+    * @param pin pin number of the customer*/
     public Customer(String firstName,String lastName,int pin){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -20,26 +23,26 @@ public class Customer {
     }
 
 
-    //Allows the user to add an account to the account list
+    /*Adds an account to the customer's HashMap*/
     public void addAccount(Account account) {
-        /*Adds an account to the customer's HashMap*/
 
         accounts.put(account.getAccountNumber(),account);
         System.out.printf("Successfully added: %d to accounts!\n", account.getAccountNumber());
     }
 
-    //Removes an account from the account list(closes account)
+    /*Removes an account from the customers HashMap
+    * @param account An account object*/
     public void removeAccount(Account account) {
-        /*Removes an account from the customers HashMap*/
 
         accounts.remove(account.getAccountNumber());
         System.out.println("Successfully removed!");
     }
 
-    //Get account by account number. Returns null if no account is found
+    /*Returns an account if the HashMap contains the
+     * account number that it was passed
+     * @param accountNumber account number used to find account
+     * @return returns an account object if it's found or null if it's not found. */
     public Account getAccountByNum(int accountNumber) {
-        /*Returns an account if the HashMap contains the
-        * account number that it was passed*/
 
         Account accountReturn = null;
 
@@ -50,14 +53,13 @@ public class Customer {
         return accountReturn;
     }
 
-    //toString method that will print the customer's name and pin
+    /*toString method that will print the customer's name and pin*/
     @Override
     public String toString() {
         return String.format("Customer's Name: %s  %s, PIN: %d", firstName, lastName, pin);
     }
 
     //Getters and setters
-
     public String getFirstName() {
         return firstName;
     }

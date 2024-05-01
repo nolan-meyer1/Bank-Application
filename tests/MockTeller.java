@@ -8,12 +8,15 @@ public class MockTeller extends Teller{
         super();
     }
 
+    /*This allows you to deposit into any
+     * account. It will look search until it finds
+     * a customer with the account and ask for the pin.
+     * If the pin is correct you can withdrawal. If not
+     * you won't be able to.
+     * @param deposit Deposit amount
+     * @param accountNum account number of the account we want to deposit to.
+     * @param customerPin customer pin attached to the account*/
     public void deposit(double deposit,int accountNum, int customerPin){
-        /*This allows you to deposit into any
-         * account. It will look search until it finds
-         * a customer with the account and ask for the pin.
-         * If the pin is correct you can withdrawal. If not
-         * you won't be able to.*/
 
         Account accountFound = null;
         Customer customerFound = null;
@@ -60,12 +63,15 @@ public class MockTeller extends Teller{
         }
     }
 
+    /*This allows you to deposit into any
+     * account. It will look search until it finds
+     * a customer with the account and ask for the pin.
+     * If the pin is correct you can deposit. If not
+     * you won't be able to.
+     * @param withdrawalTest withdrawal amount that we want to subtract from account balance
+     * @param accountNum account number of the account we want to deposit to.
+     * @param customerPin customer pin attached to the account*/
     public void withdrawal(double withdrawalTest,int accountNum, int customerPin){
-        /*This allows you to deposit into any
-         * account. It will look search until it finds
-         * a customer with the account and ask for the pin.
-         * If the pin is correct you can deposit. If not
-         * you won't be able to.*/
 
         Account accountFound = null;
         Customer customerFound = null;
@@ -118,10 +124,11 @@ public class MockTeller extends Teller{
         }
     }
 
+    /*This will ask for a customer's pin
+     * if the pin is correct it will remove the customer
+     * from the customer list
+     * @param pin Pin of the customer that we want to remove*/
     public void removeCustomerTeller(int pin){
-        /*This will ask for a customer's pin
-         * if the pin is correct it will remove the customer
-         * from the customer list*/
 
         int userInput;
         Customer customerFound = null;

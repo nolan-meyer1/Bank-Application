@@ -9,32 +9,33 @@ import org.xml.sax.SAXException;
 
 public class Bank {
 
-    //ArrayList that contains a list of the customers
+    /*ArrayList that contains a list of the customers*/
     protected static ArrayList<Customer> customerList = new ArrayList<Customer>();
 
 
-    //Default constructor
+    /*Default constructor*/
     public Bank() {
 
     }
 
-    //Adds a customer to the list
+    /*Adds customer from the customerList ArrayList
+    * @param customer A customer object*/
     public void addCustomer(Customer customer){
-        /*Adds customer from the customerList ArrayList*/
 
         customerList.add(customer);
     }
 
-    //Removes a customer from the list
+    /*Removes customer from the customerList ArrayList
+    * @param customer A customer object*/
     public void removeCustomer(Customer customer){
-        /*Removes customer from the customerList ArrayList*/
 
         customerList.remove(customer);
     }
 
-    //Gets a customer by pin
+    /*Searches for a customer by their pin number
+    * @param pin Takes in a pin number that is used to search for a customer
+    * @return returns a customer object*/
     public Customer getCustomer(int pin){
-        /*Searches for a customer by their pin number*/
 
         Customer customerReturned = null;
 
@@ -47,10 +48,9 @@ public class Bank {
         return customerReturned;
     }
 
-    //Prints all customer info
+    /*Prints all the customer data from
+     * an overridden toString method*/
     public void printAllCustomer(){
-        /*Prints all the customer data from
-        * an overridden toString method*/
 
         for(Customer customer: customerList){
             System.out.println(customer.toString());
@@ -58,16 +58,16 @@ public class Bank {
 
     }
 
-    //Return the customer list
+    /*Returns the customer list
+    * @return customerList field*/
     public ArrayList<Customer> getCustomerList() {
         return customerList;
     }
 
-    //Loads the current list of customers from an xml file
+    /*Takes in a xml file and parses
+     * through it. It will load all customers
+     * in to the bank's array list*/
     protected void loadCustomers() throws IOException, SAXException, ParserConfigurationException {
-        /*Takes in a xml file and parses
-        * through it. It will load all customers
-        * in to the bank's array list*/
 
         try{
             File input = new File("customers.xml");

@@ -5,38 +5,41 @@ public class Account {
     private int accountNumber;
     private static int numberOfAccounts = 1000;
 
-    //Constructor that has an initial deposit, and increments the numberOfAccounts and sets the account number to that number
+    /*Constructor that has an initial deposit, and increments the numberOfAccounts and sets the account number to that number
+    * @param deposit Initial deposit when creating the account*/
     public Account(double deposit){
         numberOfAccounts = numberOfAccounts + 1;
         accountNumber = numberOfAccounts;
         balance = deposit;
     }
 
-    //Another constructor for creating accounts
+    /*Another constructor for creating accounts
+    * @param balance Initial balance when creating the account.
+    * @param accountNumber Custom account number if you would like to set one.*/
     public Account(double balance,int accountNumber){
         this.balance = balance;
         this.accountNumber = accountNumber;
     }
 
-    //Defualt constructor
+    /*Default constructor*/
     public Account(){
 
     }
 
-    //Method to deposit money into the account
+    /*Takes in a deposit amount and
+     * updates the balance of the account
+     * @param deposit Deposit amount that you want to add to account balance*/
     public void deposit(double deposit){
-        /*Takes in a deposit amount and
-        * updates the balance of the account*/
 
         balance = balance + deposit;
         System.out.printf("Amount Deposited: $%.2f\n",deposit);
         System.out.printf("Updated Balance: $%.2f\n",balance);
     }
 
-    //Method to withdraw money from the account
+    /*Takes in a withdrawal amount
+     * and updates the account balance.
+     * @param amount Amount that you want to subtract from account balance.*/
     public void withdraw(double amount){
-        /*Takes in a withdrawal amount
-        * and updates the account balance.*/
 
         if (amount > balance){
             System.out.println("Insufficient Funds");
@@ -48,7 +51,7 @@ public class Account {
         }
     }
 
-    //toString method override
+    /*toString method override that prints the account number, and balance*/
     @Override
     public String toString(){
         return String.format("Account Number: %d\nBalance: $%.2f\n",accountNumber,balance);

@@ -10,10 +10,10 @@ class BankTest {
     private Customer customer1 = new Customer("Nolan","Meyer",101);
 
 
+    /* Adds the customer to the bank list. Then tries to grab the customer
+    * and see if the customer is in the list. Should return the customer.*/
     @Test
     void addCustomer() {
-        /* Adds the customer to the bank list. Then tries to grab the customer
-        and see if the customer is in the list. Should return the customer.*/
 
         bank.addCustomer(customer1);
         assertEquals(customer1,bank.getCustomer(101));
@@ -22,20 +22,21 @@ class BankTest {
         bank.removeCustomer(customer1);
     }
 
+    /*Adds that customer to the bank list. Then removes it and
+    * checks if the customer has been removed. Should return null*/
     @Test
     void removeCustomer() {
-        /*Adds that customer to the bank list. Then removes it and
-        checks if the customer has been removed. Should return null*/
 
         bank.addCustomer(customer1);
         bank.removeCustomer(customer1);
         assertNull(bank.getCustomer(customer1.getPin()));
     }
 
+    /*Adds the customer to the list. Then checks tries
+     * to return the customer. Should be able to return the customer*/
     @Test
     void getCustomer() {
-        /*Adds the customer to the list. Then checks tries
-         * to return the customer. Should be able to return the customer*/
+
         bank.addCustomer(customer1);
         assertEquals(customer1, bank.getCustomer(customer1.getPin()));
 

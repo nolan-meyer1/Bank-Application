@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class AccountTest {
 
 
+    /*Deposits another 100. The default value is set at 100
+     * so the updated balance should be 200.00*/
     @Test
     void deposit() {
-        /*Deposits another 100. The default value is set at 100
-        * so the updated balance should be 200.00*/
 
         Account account = new Account(100);
 
@@ -17,11 +17,9 @@ class AccountTest {
         assertEquals(200.00,account.getBalance());
     }
 
+    /*Withdrawals from the orginal account balance of 100*/
     @Test
     void withdraw() {
-        /*Withdrawals 50 after first setting balance back
-        to default 100.
-         */
 
         Account account = new Account(100);
 
@@ -30,10 +28,10 @@ class AccountTest {
         assertEquals(50.00,account.getBalance());
     }
 
+    /*Tests to make sure that
+     * the printout is correct*/
     @Test
     void testToString() {
-        /*Tests to make sure that
-        * the printout is correct*/
 
         Account account = new Account(100);
 
